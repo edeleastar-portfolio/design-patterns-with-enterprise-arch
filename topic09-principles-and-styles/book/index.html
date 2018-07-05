@@ -1,0 +1,443 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <style>
+    
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+  </style>
+
+  <body class="lab">
+
+    
+  <div class="uk-offcanvas-content">
+    <div id="offcanvas-usage" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav">
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic01-context/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-01
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic02-template-method-strategy/book-template-method-strategy/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-02
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic03-command/book-a-command/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-03
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic03-command/book-a-prototype/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+lab-03b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic05-observer-gof-1/book-android-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-05a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic05-observer-gof-1/book-android-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-05b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-3/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-4/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-6/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06c
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic07-enterprise-architecture/book-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-07a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic07-enterprise-architecture/book-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-07b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic08-design-techniques/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-08
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic09-principles-and-styles/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-09
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic10-architecture-patterns/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-10
+                </a>
+              </li>
+            
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>Architecture Principles and Styles </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-09</a></li>
+            
+              <li><a href="#">Introduction</a></li>
+            
+              <li><a href="#">D0</a></li>
+            
+              <li><a href="#">D1</a></li>
+            
+              <li><a href="#">D2</a></li>
+            
+              <li><a href="#">D3</a></li>
+            
+              <li><a href="#">Solution</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
+<p>In this Lab, we will build a few Architecture Views describing the design of a simple Analytics Dashboard for Runkeeper.com. This dashboard is the first application making use of data assets directly acquired from Healthgraph.com (operating as a separate company from Runkeeper.com).</p>
+</li>
+        
+          <li> <h1>LAB INTRODUCTION (Section D)</h1>
+<p>The figure below present the outlay of the Web Desktop version of the new Runkeeper.com “Achiever Analytics Dashboard”, reserved to ELITE members only.</p>
+<p> <img src="img/00.png" alt=""></p>
+<p>The dashboard is composed of 4 main areas:</p>
+<ul>
+<li>Area 1 (Left): An interface to select the dates of Activities you wish to run Analytics on</li>
+<li>Area 2 (Top): The summary banner of key data indicators describing Key Performance Indicators (KPIs), based on selected dates,</li>
+<li>Area 3 (Top-Right): A terrain topology overlay of all activities performed, based on selected dates,</li>
+<li>Area 4 (Bottom-Right): A graph showing the variations of a specific data point (here elevation, but it could be heart beat, steps, etc.) over the total duration of all selected activities.</li>
+</ul>
+<h2>Note 1</h2>
+<p>The dashboard above present data pertaining to Running Activities only.
+Dashboard contents and graphics for other activities may slightly vary, but the principle remains the same.</p>
+<h2>Note 2</h2>
+<p><strong>Red</strong> means a decrease in pace.
+<strong>Blue</strong> means in increase in pace.</p>
+<p>To describe the design of the Analytics Dashboard, we limit ourselves to the creation of the following Architecture Views:</p>
+<ul>
+<li>In Section D.0 Context View </li>
+<li>In Section D.1 Behavioral View </li>
+<li>In Section D.2 Information View </li>
+<li>In Section D.3 Functional View </li>
+</ul>
+<h2>Note 3</h2>
+<p>The two most important decisions made about the Architecture we will describe in the next section are:</p>
+<p>1.<strong><em>Performance by Design</em></strong>: an asynchronous batch analytics daemon continuously runs on Runkeeper&#39;s servers to perform the most data intensive calculations and prepare De-normalized data analytics views that the Dashboard can connect to </p>
+<p>2.<strong><em>Data Source Abstraction</em></strong>:  data from multiple sources (off-premise, and on-premise) is consolidated in one location), accessed through an indirection layer reducing coupling between front-end and back-end. </p>
+</li>
+        
+          <li> <h1>STEP D0 – Creating the CONTEXT VIEW</h1>
+<p>The purpose of this view is to outline the main elements at play in the design of our analytics dashboard:</p>
+<ol>
+<li>Who will interact with the dashboard, performing what kind of actions </li>
+<li>What will interact with the dashboard, performing what kind of actions</li>
+</ol>
+<h3>EXERCISE</h3>
+<ul>
+<li><p>In the Model Tree, under the View folder, create a new sub-folder named: “D - Analytics Dashboard”</p>
+</li>
+<li><p>In the Model Tree, under the View folder, create a new sub-folder named: “D0 - Context View”</p>
+</li>
+<li><p>Within the folder newly added above, create a new Model canvas named “D0a – System Context”</p>
+</li>
+<li><p>Clone the figure below</p>
+</li>
+</ul>
+<p><img src="img/01.png" alt=""></p>
+<p>All User data candidate for Analytics is collected and correlated from 3 distinct sources of information: PostgreSQL (User Activity / Workouts data), REDIS (User Geo-positioning / Health Tracking data points) and HealthGraph (User Health Profile data).</p>
+<p>Resulting datasets (prepared for Analytics Dashboard reporting) are then persisted in a single location which is the authoritative source for reporting, i.e. providing data that can be analyzed under a number of reporting dimensions.</p>
+<h3>EXERCISE</h3>
+<ul>
+<li><p>In the Model Tree, under the View folder named: “D0 – Context View”</p>
+</li>
+<li><p>Within the folder newly added above, create a new Model canvas named “D0b – System Features”</p>
+</li>
+<li><p>Clone the figure below</p>
+</li>
+</ul>
+<p><img src="img/02.png" alt=""></p>
+<p>The architecture is composed of two main distinct components, running on different server processes, possibly on different servers, independently from one another.</p>
+</li>
+        
+          <li> <h1>STEP D1 – Creating the BEHAVIORAL VIEW</h1>
+<p>The purpose of this View is to outline:</p>
+<ol>
+<li>How data gets collected and prepared for purposes building analytics data sets </li>
+<li>How analytics data sets are served to users </li>
+</ol>
+<h3>D1a: DATA PREPARATION</h3>
+<p>A Data Preparation process is triggered every time a User uploads new data points (e.g. a new activity feed, a modification of heath profile).
+The result of the data preparation stores User Analytics Views into Runkeeper&#39;s Data Warehouse.</p>
+<h3>EXERCISE</h3>
+<ul>
+<li><p>In the Model Tree, under the View folder, create a new sub-folder named: “D - Analytics Dashboard”</p>
+</li>
+<li><p>In the Model Tree, under the View folder, create a new sub-folder named: “D1 - Behavioral View”</p>
+</li>
+<li><p>Within the folder newly added above, create a new Model canvas named “D1a – Data Preparation”</p>
+</li>
+<li><p>Clone the figure below</p>
+</li>
+</ul>
+<p><img src="img/03.png" alt=""></p>
+<h3>D1b: DASHBOARD RENDERING</h3>
+<p>To display render data analytics related to a set of selected dates, a number of reporting objects are generated from Runkeeper&#39;s Data Warehouse.</p>
+<p>The Data Warehouse stores all essential analytics data points required to fulfill analytics requests of all ELITE members.</p>
+<h3>EXERCISE</h3>
+<ul>
+<li><p>In the Model Tree, under the View folder, create a new sub-folder named: “D - Analytics Dashboard”</p>
+</li>
+<li><p>In the Model Tree, under the View folder, create a new sub-folder named: “D1 - Behavioral View”</p>
+</li>
+<li><p>Within the folder newly added above, create a new Model canvas named “D1b – Dashboard Rendering”</p>
+</li>
+<li><p>Clone the figure below</p>
+</li>
+</ul>
+<p><img src="img/04.png" alt=""></p>
+</li>
+        
+          <li> <h1>STEP D2 – Creating the INFORMATION VIEW</h1>
+<p>The purpose of this View is to model:</p>
+<ol>
+<li>Data flow of the asynchronous Batch Analytics data preparation process </li>
+<li>Data flow of the synchronous request/response dashboard rendering process </li>
+</ol>
+<p><strong>Selected Data-driven Architectural Style</strong>: Data Warehousing ETL</p>
+<p><strong>Selected Architectural Patterns</strong>: Pipes &amp; Filters, Batch Data Processing</p>
+<h3>EXERCISE</h3>
+<ul>
+<li><p>In the Model Tree, under the View folder, create a new sub-folder named: “D - Analytics Dashboard”</p>
+</li>
+<li><p>In the Model Tree, under the View folder, create a new sub-folder named: “D2 - Information View”</p>
+</li>
+<li><p>Within the folder newly added above, create a new Model canvas named “D2a – Batch Analytics Data Flow”</p>
+</li>
+<li><p>Clone the figure below</p>
+</li>
+</ul>
+<p><img src="img/05.png" alt=""></p>
+<h3>EXERCISE</h3>
+<ul>
+<li><p>In the Model Tree, under the View folder, create a new sub-folder named: “D - Analytics Dashboard”</p>
+</li>
+<li><p>In the Model Tree, under the View folder, create a new sub-folder named: “D2 - Information View”</p>
+</li>
+<li><p>Within the folder newly added above, create a new Model canvas named “D2b – Dashboard Rendering Data Flow”</p>
+</li>
+<li><p>Clone the figure below</p>
+</li>
+</ul>
+<p><img src="img/06.png" alt=""></p>
+</li>
+        
+          <li> <h1>STEP D3 – Creating the FUNCTIONAL VIEW(S) of our Analytics Dashboard</h1>
+<p>The purpose of this View is to outline:</p>
+<ol>
+<li>The structure of our design and grouping of key components </li>
+<li>How presentation components are abstracted data sources </li>
+</ol>
+<p><strong><em>Selected Application-driven Architectural Style</em></strong>: Layered Architecture – Relaxed Layering Variant.</p>
+<p><strong><em>Selected Architectural Patterns</em></strong>: Transfer Object, DAO (Data Access Object), Template View (MVC), Entity Aggregation.</p>
+<h3>EXERCISE</h3>
+<ul>
+<li><p>In the Model Tree, under the View folder, create a new sub-folder named: “D - Analytics Dashboard”</p>
+</li>
+<li><p>In the Model Tree, under the View folder, create a new sub-folder named: “D2 - Functional View”</p>
+</li>
+<li><p>Within the folder newly added above, create a new Model canvas named “D3a – Indirection Layers””</p>
+</li>
+<li><p>Clone the figure below</p>
+</li>
+</ul>
+<p><img src="img/07.png" alt=""></p>
+<h3>EXERCISE</h3>
+<ul>
+<li><p>In the Model Tree, under the View folder, create a new sub-folder named: “D - Analytics Dashboard”</p>
+</li>
+<li><p>In the Model Tree, under the View folder, create a new sub-folder named: “D3 - Functional View”</p>
+</li>
+<li><p>Within the folder newly added above, create a new Model canvas named “D3b – Data Provisioning”</p>
+</li>
+<li><p>Clone the figure below</p>
+</li>
+</ul>
+<p><img src="img/08.png" alt=""></p>
+</li>
+        
+          <li> <h1>Solution</h1>
+<p>This github repository contains the solution for this lab (i.e. lab 09): </p>
+<ul>
+<li><a href="https://github.com/wit-design-patterns-2016/models">https://github.com/wit-design-patterns-2016/models</a></li>
+</ul>
+</li>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('uk-label uk-text-lowercase');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertAfter($images[i]);
+      $('<br>').insertAfter($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,735 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <style>
+    
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+  </style>
+
+  <body class="lab">
+
+    
+  <div class="uk-offcanvas-content">
+    <div id="offcanvas-usage" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav">
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic01-context/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-01
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic02-template-method-strategy/book-template-method-strategy/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-02
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic03-command/book-a-command/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-03
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic03-command/book-a-prototype/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+lab-03b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic05-observer-gof-1/book-android-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-05a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic05-observer-gof-1/book-android-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-05b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-3/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-4/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-6/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06c
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic07-enterprise-architecture/book-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-07a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic07-enterprise-architecture/book-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-07b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic08-design-techniques/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-08
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic09-principles-and-styles/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-09
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic10-architecture-patterns/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-10
+                </a>
+              </li>
+            
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>Patterns Thinking </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-06b</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">06</a></li>
+            
+              <li><a href="#">07</a></li>
+            
+              <li><a href="#">08</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
+<p>Retrieve a list of users from a remote REST service. Implement this using the using the Half Sync/Half Async Pattern.</p>
+</li>
+        
+          <li> <h1>Setup</h1>
+<h2>Android Pacemaker Client</h2>
+<p>This is v4 of the pacemaker-android project from the last android lab:</p>
+<ul>
+<li><a href="https://github.com/wit-design-patterns-2016/pacemaker-android/releases/tag/V4">https://github.com/wit-design-patterns-2016/pacemaker-android/releases/tag/V4</a></li>
+</ul>
+<p>You can import this project, or keep working with your own version.</p>
+<h2>Pacemaker Web Service</h2>
+<p>This is a version of the pacemaker-service from the Agile Software Module:</p>
+<ul>
+<li><a href="https://github.com/wit-design-patterns-2016/pacemaker-service">https://github.com/wit-design-patterns-2016/pacemaker-service</a></li>
+</ul>
+<p>This project was evolved over these labs:</p>
+<ul>
+<li><a href="http://edeleastar.github.io/agile-software-dev/topic08/book/index.html">Lab08</a></li>
+<li><a href="http://edeleastar.github.io/agile-software-dev/topic09/book/index.html">Lab09</a></li>
+<li><a href="http://edeleastar.github.io/agile-software-dev/topic10/book/index.html">Lab10</a></li>
+<li><a href="http://edeleastar.github.io/agile-software-dev/topic11/book/index.html">Lab11</a></li>
+</ul>
+<p>To run the project, download and install the Play Framework Version 2.2.6:</p>
+<ul>
+<li><a href="https://www.playframework.com/download#older-versions">https://www.playframework.com/download#older-versions</a></li>
+</ul>
+<p>Then download this release of pacemaker-service:</p>
+<ul>
+<li><a href="https://github.com/wit-design-patterns-2016/pacemaker-service/releases/tag/V2">https://github.com/wit-design-patterns-2016/pacemaker-service/releases/tag/V2</a></li>
+</ul>
+<p>Run a shell inside the project folder and enter this command:</p>
+<pre><code>play run</code></pre>
+<p><img src="img/05.png" alt=""></p>
+<p>The service should be available on:</p>
+<ul>
+<li><a href="http://localhost:9000">http://localhost:9000</a></li>
+</ul>
+</li>
+        
+          <li> <h1>Pacemaker-service</h1>
+<p>You can register a new user, log in and upload an activity.</p>
+<ul>
+<li><a href="http://localhost:9000">http://localhost:9000</a></li>
+</ul>
+<p><img src="img/06.png" alt="">
+<img src="img/10.png" alt="">
+<img src="img/07.png" alt="">
+<img src="img/08.png" alt="">
+<img src="img/09.png" alt=""></p>
+<p>The service also exposes REST endpoints:</p>
+<ul>
+<li><a href="http://localhost:9000/api/users">http://localhost:9000/api/users</a></li>
+<li><a href="http://localhost:9000/api/users/5">http://localhost:9000/api/users/5</a></li>
+<li><a href="http://localhost:9000/api/users/5/activities">http://localhost:9000/api/users/5/activities</a></li>
+</ul>
+<p>(this data is preloaded in the app).</p>
+<p><img src="img/11.png" alt="">
+<img src="img/12.png" alt="">
+<img src="img/13.png" alt=""></p>
+</li>
+        
+          <li> <h1>Separated Activities by User</h1>
+<p>Back in the Android project..</p>
+<p>Currently a single list of activities is maintained, regardless of which user is logged on. We can easily refactor this by altering the data structure as follows:</p>
+<h2>PacemakerApp</h2>
+<pre><code class="lang-java">  private Map&lt;String, List&lt;MyActivity&gt;&gt; activities    = new HashMap&lt;String, List&lt;MyActivity&gt;&gt;();</code></pre>
+<pre><code class="lang-java">  public void registerUser(User user)
+  {
+    users.put(user.email, user);
+    activities.put(user.email, new ArrayList&lt;MyActivity&gt;());
+  }</code></pre>
+<pre><code class="lang-java">  public void createActivity (MyActivity activity)
+  {
+    if (loggedInUser != null)
+    {
+      List&lt;MyActivity&gt; usersActivities = activities.get(loggedInUser.email);
+      activities.put(loggedInUser.email, usersActivities);
+      usersActivities.add(activity);
+    }
+  }
+
+  public List&lt;MyActivity&gt; getActivities()
+  {
+    List&lt;MyActivity&gt; usersActivities = null;
+    if (loggedInUser != null)
+    {
+      usersActivities = activities.get(loggedInUser.email);
+    }
+    return usersActivities;
+  }</code></pre>
+</li>
+        
+          <li> <h1>JSON &amp; HTTP Libraries</h1>
+<p>The pacemaker-service project is using the following libraries in its REST implementation:</p>
+<ul>
+<li><a href="https://hc.apache.org">https://hc.apache.org</a></li>
+<li><a href="https://sourceforge.net/projects/flexjson/">https://sourceforge.net/projects/flexjson/</a></li>
+</ul>
+<p>To keep our implementation reasonably simple we will incorporate these libraries directly into our Android project.</p>
+<p>Library download and integration is just a matter of the correct Gradle entries:</p>
+<h2>build.gradle</h2>
+<pre><code>android {
+    useLibrary &#39;org.apache.http.legacy&#39;
+}
+
+dependencies {
+    compile fileTree(dir: &#39;libs&#39;, include: [&#39;*.jar&#39;])
+    testCompile &#39;junit:junit:4.12&#39;
+    compile &#39;com.android.support:appcompat-v7:23.1.1&#39;
+    compile group: &#39;com.google.guava&#39;, name: &#39;guava&#39;, version: &#39;18.0&#39;
+    compile &#39;net.sf.flexjson:flexjson:3.2&#39;
+}</code></pre>
+<p>The http library is largely superseded now, but we can use the same one we used on the pacemaker-service to keep our projects aligned for the moment.</p>
+</li>
+        
+          <li> <h1>pacemaker-android HTTP package</h1>
+<p>We need new package of classes in the android application to converse with the pacemaker-service app:</p>
+<p>Create a new package called &#39;org.pacemaker.http&#39;, and incorporate these classes:</p>
+<h2>Request</h2>
+<pre><code class="lang-java">package org.pacemaker.http;
+
+import java.util.List;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.os.AsyncTask;
+
+@SuppressWarnings(&quot;rawtypes&quot;)
+public abstract class Request extends AsyncTask&lt;Object, Void, Object&gt;
+{
+  public Response         responder;
+  public ProgressDialog   dialog;
+  public Context          context;
+  public String           message;
+  public Exception        error;
+
+  public Request(Context context, Response responder, String message)
+  {
+    this.responder = responder;
+    this.context = context;
+    this.message = message;
+  }
+
+  @Override
+  protected void onPreExecute()
+  {
+    super.onPreExecute();
+    this.dialog = new ProgressDialog(context, 1);
+    this.dialog.setMessage(message);
+    this.dialog.show();
+  }
+
+  @Override
+  protected  Object doInBackground(Object... params)
+  {
+    error = null;
+    try
+    {
+      return doRequest(params);
+    }
+    catch (Exception e)
+    {
+      error = e;
+    }
+    return null;
+  }
+
+  protected abstract  Object doRequest(Object... params) throws Exception;
+
+  @SuppressWarnings(&quot;unchecked&quot;)
+  @Override
+  protected void onPostExecute(Object result)
+  {
+    super.onPostExecute(result);
+    if (dialog.isShowing())
+    {
+      dialog.dismiss();
+    }
+    if (error != null)
+    {
+      responder.errorOccurred(error);  
+    }
+    else
+    {
+      if (result instanceof List)
+      {
+        responder.setResponse((List)result);
+      }
+      else
+      {
+        responder.setResponse(result);
+      }
+    }
+  } 
+}</code></pre>
+<h2>Response</h2>
+<pre><code>package org.pacemaker.http;
+
+import java.util.List;
+
+public interface Response&lt;T&gt;
+{
+  public void setResponse(List&lt;T&gt; aList);
+  public void setResponse(T anObject);
+  public void errorOccurred (Exception e);
+}</code></pre>
+<h2>Rest</h2>
+<pre><code>package org.pacemaker.http;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpDelete;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.BasicResponseHandler;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
+
+public class Rest
+{
+  private static DefaultHttpClient httpClient = null;
+  private static final String URL = &quot;http://10.0.2.2:9000&quot;;
+
+  private static DefaultHttpClient httpClient()
+  {
+    if (httpClient == null)
+    {
+      HttpParams httpParameters = new BasicHttpParams();
+      HttpConnectionParams.setConnectionTimeout(httpParameters, 10000);
+      HttpConnectionParams.setSoTimeout(httpParameters, 10000);
+      httpClient = new DefaultHttpClient(httpParameters);
+    }
+    return httpClient;
+  }
+
+  public static String get(String path) throws Exception
+  {
+    HttpGet getRequest = new HttpGet(URL + path);
+    getRequest.setHeader(&quot;accept&quot;, &quot;application/json&quot;);
+    HttpResponse response = httpClient().execute(getRequest);
+    return new BasicResponseHandler().handleResponse(response);
+  }
+
+  public static String delete(String path) throws Exception
+  {
+    HttpDelete deleteRequest = new HttpDelete(URL + path);
+    HttpResponse response = httpClient().execute(deleteRequest);
+    return new BasicResponseHandler().handleResponse(response);
+  }
+
+  public static String put(String path, String json) throws Exception
+  {
+    HttpPut putRequest = new HttpPut(URL + path);
+    putRequest.setHeader(&quot;Content-type&quot;, &quot;application/json&quot;);
+    putRequest.setHeader(&quot;accept&quot;, &quot;application/json&quot;);
+
+    StringEntity s = new StringEntity(json);
+    s.setContentEncoding(&quot;UTF-8&quot;);
+    s.setContentType(&quot;application/json&quot;);
+    putRequest.setEntity(s);
+
+    HttpResponse response = httpClient().execute(putRequest);
+    return new BasicResponseHandler().handleResponse(response);
+  }
+
+  public static String post(String path, String json) throws Exception
+  {
+    HttpPost putRequest = new HttpPost(URL + path);
+    putRequest.setHeader(&quot;Content-type&quot;, &quot;application/json&quot;);
+    putRequest.setHeader(&quot;accept&quot;, &quot;application/json&quot;);
+
+    StringEntity s = new StringEntity(json);
+    s.setContentEncoding(&quot;UTF-8&quot;);
+    s.setContentType(&quot;application/json&quot;);
+    putRequest.setEntity(s);
+
+    HttpResponse response = httpClient().execute(putRequest);
+    return new BasicResponseHandler().handleResponse(response);
+  }
+}</code></pre>
+</li>
+        
+          <li> <h1>Json Parser Classes</h1>
+<p>Both pacemaker-service and pacemaker-android can use the same serializers. </p>
+<p>Place this class in the models package in the android project:</p>
+<h2>JsonParser</h2>
+<pre><code>package org.pacemaker.models;
+
+import java.util.ArrayList;
+import java.util.List;
+import flexjson.JSONDeserializer;
+import flexjson.JSONSerializer;
+
+public class JsonParser
+{
+  public static JSONSerializer userSerializer     = new JSONSerializer().exclude(&quot;class&quot;)
+      .exclude(&quot;persistent&quot;)
+      .exclude(&quot;entityId&quot;);
+  public static JSONSerializer activitySerializer = new JSONSerializer().exclude(&quot;class&quot;)
+      .exclude(&quot;persistent&quot;)
+      .exclude(&quot;entityId&quot;);
+
+  public static User json2User(String json)
+  {
+    return new JSONDeserializer&lt;User&gt;().deserialize(json, User.class);
+  }
+
+  public static List&lt;User&gt; json2Users(String json)
+  {
+    return new JSONDeserializer&lt;ArrayList&lt;User&gt;&gt;().use(&quot;values&quot;, User.class)
+        .deserialize(json);
+  }
+
+  public static String user2Json(Object obj)
+  {
+    return userSerializer.serialize(obj);
+  }
+
+  public static MyActivity json2Activity(String json)
+  {
+    MyActivity activity = new JSONDeserializer&lt;MyActivity&gt;().deserialize(json,   MyActivity.class);
+    return activity;
+  }
+
+  public static String activity2Json(Object obj)
+  {
+    return activitySerializer.serialize(obj);
+  }
+
+  public static  List&lt;MyActivity&gt; json2Activities (String json)
+  {
+    return new JSONDeserializer&lt;ArrayList&lt;MyActivity&gt;&gt;().use(&quot;values&quot;, MyActivity.class).deserialize(json);
+  }
+}</code></pre>
+<p>The MyActivity class has an unfortunately named attribute:</p>
+<pre><code>  public String type;</code></pre>
+<p>Rename this to:</p>
+<pre><code>  public String kind;</code></pre>
+<p>(type is has a specific meaning in another context)</p>
+</li>
+        
+          <li> <h1>PacemakerAPI Client</h1>
+<p>Create a new class in the &#39;org.pacemaker.main&#39; package to encapsulate API access:</p>
+<h2>PacemkerAPI</h2>
+<pre><code class="lang-java">package org.pacemaker.main;
+
+import java.util.List;
+import org.pacemaker.http.Request;
+import org.pacemaker.http.Response;
+import org.pacemaker.http.Rest;
+import org.pacemaker.models.JsonParser;
+import org.pacemaker.models.User;
+import android.content.Context;
+
+public class PacemakerAPI
+{
+  public static void getUsers(Context context, Response&lt;User&gt; response, String dialogMesssage)
+  {
+    new GetUsers(context, response, dialogMesssage).execute();
+  }
+
+  public static void createUser(Context context, Response&lt;User&gt; response, String dialogMesssage, User user)
+  {
+    new CreateUser(context, response, dialogMesssage).execute(user);
+  }
+}
+
+class GetUsers extends Request
+{
+  public GetUsers(Context context, Response&lt;User&gt; callback, String message)
+  {
+    super(context, callback, message);
+  }
+
+  @Override
+  protected List&lt;User&gt; doRequest(Object... params) throws Exception
+  {
+    String response = Rest.get(&quot;/api/users&quot;);
+    List&lt;User&gt; userList = JsonParser.json2Users(response);
+    return userList;
+  }
+}
+
+class CreateUser extends Request
+{
+  public CreateUser(Context context, Response&lt;User&gt; callback, String message)
+  {
+    super(context, callback, message);
+  }
+
+  @Override
+  protected User doRequest(Object... params) throws Exception
+  {
+    String response = Rest.post(&quot;/api/users&quot;, JsonParser.user2Json(params[0]));
+    return JsonParser.json2User(response);
+  }
+}</code></pre>
+</li>
+        
+          <li> <h1>Connect</h1>
+<p>In order to use network access from android, you will need to specifically enable it in the android manifest:</p>
+<h2>AndroidManifest.xml</h2>
+<pre><code>    &lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;</code></pre>
+<h2>Welcome Activity</h2>
+<p>We can now retrieve the users list from the welcome activity:</p>
+<pre><code>  public void onCreate(Bundle savedInstanceState)
+  {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_welcome);
+    app = (PacemakerApp) getApplication();
+    PacemakerAPI.getUsers(this, app, &quot;Retrieving list of users&quot;);
+  }</code></pre>
+<p>Note that the PacemakerApp class must implement the Response interface:</p>
+<h2>PacemakerApp</h2>
+<pre><code class="lang-java">public class PacemakerApp extends Application implements Response&lt;User&gt;
+{
+  private Map&lt;String, User&gt;             users         = new HashMap&lt;String, User&gt;();
+  private Map&lt;String, List&lt;MyActivity&gt;&gt; activities    = new HashMap&lt;String, List&lt;MyActivity&gt;&gt;();
+  private User                          loggedInUser;
+  private boolean                       connected     = false;
+
+  @Override
+  public void setResponse(List&lt;User&gt; aList)
+  {
+    connected = true;
+    for (User user : aList)
+    {
+      users.put(user.email, user);
+    }
+  }
+
+  @Override
+  public void setResponse(User anObject)
+  {
+    connected = true;
+  }
+
+  @Override
+  public void errorOccurred(Exception e)
+  {
+    connected = false;
+    Toast toast = Toast.makeText(this, &quot;Failed to connect to Pacemaker Service&quot;, Toast.LENGTH_SHORT);
+    toast.show();
+  }
+
+  //...</code></pre>
+<p>You should be able to test this now. If the service is running, then the android app will contact the service and download a list of the registered users, so you should be able to log in with one of the pre-defined users.</p>
+<p>If it is not working, you should see an error toast in the android app.</p>
+</li>
+        
+          <li> <h1>Archive</h1>
+<p>Archive of the apps so far:</p>
+<h2>Android:</h2>
+<ul>
+<li><a href="https://github.com/wit-design-patterns-2016/pacemaker-android/releases/tag/V5">https://github.com/wit-design-patterns-2016/pacemaker-android/releases/tag/V5</a></li>
+</ul>
+<h2>Web Service:</h2>
+<ul>
+<li><a href="https://github.com/wit-design-patterns-2016/pacemaker-service/releases/tag/V2">https://github.com/wit-design-patterns-2016/pacemaker-service/releases/tag/V2</a></li>
+</ul>
+</li>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('uk-label uk-text-lowercase');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertAfter($images[i]);
+      $('<br>').insertAfter($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

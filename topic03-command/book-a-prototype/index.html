@@ -1,0 +1,560 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <style>
+    
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+  </style>
+
+  <body class="lab">
+
+    
+  <div class="uk-offcanvas-content">
+    <div id="offcanvas-usage" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav">
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic01-context/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-01
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic02-template-method-strategy/book-template-method-strategy/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-02
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic03-command/book-a-command/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-03
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic03-command/book-a-prototype/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+lab-03b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic05-observer-gof-1/book-android-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-05a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic05-observer-gof-1/book-android-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-05b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-3/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-4/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-6/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06c
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic07-enterprise-architecture/book-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-07a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic07-enterprise-architecture/book-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-07b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic08-design-techniques/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-08
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic09-principles-and-styles/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-09
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic10-architecture-patterns/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-10
+                </a>
+              </li>
+            
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>Command </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">lab-03b</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">06</a></li>
+            
+              <li><a href="#">Exercses</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
+<p>Explore some deficiencies in the pacemaker command pattern implementation. Introduce prototype into the pacemaker application to fix these issues.</p>
+</li>
+        
+          <li> <h1>Setup</h1>
+<p>This the the simplified pacemaker as we left it last week:</p>
+<ul>
+<li><a href="./archives/cliche.zip">cliche.zip</a></li>
+<li><a href="./archives/pacemaker-console-command.zip">pacemaker-console-command.zip</a></li>
+</ul>
+<p>Running the app may give us the following experience:</p>
+<pre><code>Welcome to pacemaker-console - ?help for instructions
+pm&gt; cu a a a a
++----+-----------+----------+-------+----------+
+| ID | FIRSTNAME | LASTNAME | EMAIL | PASSWORD |
++----+-----------+----------+-------+----------+
+|  1 |         a |        a |     a |        a |
++----+-----------+----------+-------+----------+
+
+pm&gt; cu b b b b
++----+-----------+----------+-------+----------+
+| ID | FIRSTNAME | LASTNAME | EMAIL | PASSWORD |
++----+-----------+----------+-------+----------+
+|  2 |         b |        b |     b |        b |
++----+-----------+----------+-------+----------+
+
+pm&gt; undo
+pm&gt; undo
+Error executing command
+pm&gt;</code></pre>
+<p>and last week we recommended Prototype as a potential candidate pattern to consider to correct our implementation:</p>
+<ul>
+<li><a href="http://sourcemaking.om/design_patterns/prototype">http://sourcemaking.om/design_patterns/prototype</a></li>
+</ul>
+</li>
+        
+          <li> <h1>Prototype in Command</h1>
+<p>Extend the Command abstract class to include a new method:</p>
+<pre><code class="lang-java">  public Command copy()
+  {
+    return null;
+  }</code></pre>
+<p>We provide a default implementation, as opposed to an abstract one.</p>
+<p>We can implement this in the CreateUserCommand:</p>
+<pre><code class="lang-java">  public Command copy()
+  {
+    CreateUserCommand command = new CreateUserCommand(pacemaker, parser);
+    command.ser = user;
+    return command;
+  }</code></pre>
+<p>and also in the DeleteUserCommand:</p>
+<pre><code class="lang-java">  public Command copy()
+  {
+    DeleteUserCommand command = new DeleteUserCommand(pacemaker, parser);
+    command.ser = user;
+    return command;
+  }</code></pre>
+<p>We can leave ListUsersCommand untouched, as we do not consider it &#39;undable&#39;.</p>
+</li>
+        
+          <li> <h1>CommandDispatcher</h1>
+<p>We can now refactor the CommandDispatcher to make use of the prototype pattern:</p>
+<pre><code class="lang-java">  public boolean dispatchCommand(String commandName, Object [] parameters) throws Exception
+  {
+    boolean dispatched = false;
+    Command command = commands.et(commandName);
+
+    if (command != null)
+    { 
+      dispatched = true;
+      command.oCommand(parameters);      
+      Command copy = command.opy();
+      if (copy != null)
+      {
+        undoBuffer.ush(copy);
+      }
+    }
+    return dispatched;
+  }</code></pre>
+<p>We should now be in a position to try this script:</p>
+<pre><code>Welcome to pacemaker-console - ?help for instructions
+pm&gt; cu a a a a
++----+-----------+----------+-------+----------+
+| ID | FIRSTNAME | LASTNAME | EMAIL | PASSWORD |
++----+-----------+----------+-------+----------+
+|  1 |         a |        a |     a |        a |
++----+-----------+----------+-------+----------+
+
+pm&gt; cu b b b b
++----+-----------+----------+-------+----------+
+| ID | FIRSTNAME | LASTNAME | EMAIL | PASSWORD |
++----+-----------+----------+-------+----------+
+|  2 |         b |        b |     b |        b |
++----+-----------+----------+-------+----------+
+
+pm&gt; cu c c c c
++----+-----------+----------+-------+----------+
+| ID | FIRSTNAME | LASTNAME | EMAIL | PASSWORD |
++----+-----------+----------+-------+----------+
+|  3 |         c |        c |     c |        c |
++----+-----------+----------+-------+----------+
+
+pm&gt; undo
+pm&gt; lu
++----+-----------+----------+-------+----------+
+| ID | FIRSTNAME | LASTNAME | EMAIL | PASSWORD |
++----+-----------+----------+-------+----------+
+|  1 |         a |        a |     a |        a |
+|  2 |         b |        b |     b |        b |
++----+-----------+----------+-------+----------+
+
+pm&gt; undo
+pm&gt; lu
++----+-----------+----------+-------+----------+
+| ID | FIRSTNAME | LASTNAME | EMAIL | PASSWORD |
++----+-----------+----------+-------+----------+
+|  1 |         a |        a |     a |        a |
++----+-----------+----------+-------+----------+
+
+pm&gt; redo
+pm&gt; lu
++----+-----------+----------+-------+----------+
+| ID | FIRSTNAME | LASTNAME | EMAIL | PASSWORD |
++----+-----------+----------+-------+----------+
+|  1 |         a |        a |     a |        a |
+|  4 |         b |        b |     b |        b |
++----+-----------+----------+-------+----------+
+
+pm&gt; redo
+pm&gt; lu
++----+-----------+----------+-------+----------+
+| ID | FIRSTNAME | LASTNAME | EMAIL | PASSWORD |
++----+-----------+----------+-------+----------+
+|  1 |         a |        a |     a |        a |
+|  4 |         b |        b |     b |        b |
+|  5 |         c |        c |     c |        c |
++----+-----------+----------+-------+----------+
+
+pm&gt;</code></pre>
+<p>The service should behave as expected..</p>
+</li>
+        
+          <li> <h1>Another problem..</h1>
+<p>Try this script here:</p>
+<pre><code>Welcome to pacemaker-console - ?help for instructions
+pm&gt; cu a a a a
++----+-----------+----------+-------+----------+
+| ID | FIRSTNAME | LASTNAME | EMAIL | PASSWORD |
++----+-----------+----------+-------+----------+
+|  1 |         a |        a |     a |        a |
++----+-----------+----------+-------+----------+
+
+pm&gt; undo
+pm&gt; redo
+pm&gt; undo
+Error executing command
+pm&gt;</code></pre>
+<p>Why are we getting the error above? See if you can find the error by debugging the service.</p>
+</li>
+        
+          <li> <h1>Resolution</h1>
+<p>The problem is that our redo for CreateUserCommand is not correctly implemented:</p>
+<pre><code>  public void redoCommand() throws Exception
+  {
+    pacemaker.reateUser(user.irstname, user.astname, user.mail, user.assword);
+  }</code></pre>
+<p>On the face of it, this looks reasonable.We are re-creating the user.However, every time we create a user, we get a new ID.</p>
+<p>This is ignored in the above, and we still remember the original id.Here is a version that should work:</p>
+<pre><code class="lang-java">  public void redoCommand() throws Exception
+  {
+    user.d = pacemaker.reateUser(user.irstname, user.astname, user.mail, user.assword);
+  }</code></pre>
+<p>This script should now behave as expected:</p>
+<pre><code>Welcome to pacemaker-console - ?help for instructions
+pm&gt; cu a a a a
++----+-----------+----------+-------+----------+
+| ID | FIRSTNAME | LASTNAME | EMAIL | PASSWORD |
++----+-----------+----------+-------+----------+
+|  1 |         a |        a |     a |        a |
++----+-----------+----------+-------+----------+
+
+pm&gt; undo
+pm&gt; redo
+pm&gt; undo
+pm&gt; lu
+pm&gt;</code></pre>
+<p>You will also need to make a similar change to DeleteUserCommand:</p>
+<pre><code class="lang-java">  public void undoCommand() throws Exception
+  {
+    user.d = pacemaker.reateUser(user.irstname, user.astname, user.mail, user.assword);
+  }</code></pre>
+</li>
+        
+          <li> <h1>Yet Another Problem(!)</h1>
+<p>This transcript here (discussed in class) is counter intuitive to the user:</p>
+<pre><code>Welcome to pacemaker-console - ?help for instructions
+pm&gt; cu a a a a
++----+-----------+----------+-------+----------+
+| ID | FIRSTNAME | LASTNAME | EMAIL | PASSWORD |
++----+-----------+----------+-------+----------+
+|  1 |         a |        a |     a |        a |
++----+-----------+----------+-------+----------+
+pm&gt; cu b b b b
++----+-----------+----------+-------+----------+
+| ID | FIRSTNAME | LASTNAME | EMAIL | PASSWORD |
++----+-----------+----------+-------+----------+
+|  2 |         b |        b |     b |        b |
++----+-----------+----------+-------+----------+
+pm&gt; undo
+pm&gt; cu v v v v
++----+-----------+----------+-------+----------+
+| ID | FIRSTNAME | LASTNAME | EMAIL | PASSWORD |
++----+-----------+----------+-------+----------+
+|  3 |         v |        v |     v |        v |
++----+-----------+----------+-------+----------+
+pm&gt; lu
++----+-----------+----------+-------+----------+
+| ID | FIRSTNAME | LASTNAME | EMAIL | PASSWORD |
++----+-----------+----------+-------+----------+
+|  1 |         a |        a |     a |        a |
+|  3 |         v |        v |     v |        v |
++----+-----------+----------+-------+----------+
+pm&gt; redo
+pm&gt; lu
++----+-----------+----------+-------+----------+
+| ID | FIRSTNAME | LASTNAME | EMAIL | PASSWORD |
++----+-----------+----------+-------+----------+
+|  1 |         a |        a |     a |        a |
+|  3 |         v |        v |     v |        v |
+|  4 |         b |        b |     b |        b |
++----+-----------+----------+-------+----------+
+pm&gt;</code></pre>
+<p>When we perform a new command, that is not undo/redo, then we should reset the redo stack:</p>
+<h2>CommandDispatcher</h2>
+<pre><code class="lang-java">    if (command != null)
+    { 
+      dispatched = true;
+      command.oCommand(parameters);      
+      Command copy = command.opy();
+      if (copy != null)
+      {
+        undoBuffer.ush(copy);
+        redoBuffer.lear();
+      }
+    }</code></pre>
+<p>We can also enhance the feedback to the user in the redo command:</p>
+<pre><code class="lang-java">public class RedoCommand extends Command
+{
+  private Stack&lt;Command&gt; undoBuffer;
+  private Stack&lt;Command&gt; redoBuffer;
+
+  public RedoCommand(Stack&lt;Command&gt; undoBuffer, Stack&lt;Command&gt; redoBuffer)
+  {
+    this.ndoBuffer = undoBuffer;
+    this.edoBuffer = redoBuffer;
+  }
+
+  public void doCommand(Object[] parameters) throws Exception
+  {
+    if (redoBuffer.ize() &gt; 0)
+    {
+      Command command = redoBuffer.op();
+      command.edoCommand();
+      undoBuffer.ush(command);
+    }
+    else
+    {
+      System.ut.rintln(&quot;Nothing to redo&quot;);
+    }
+  }
+}</code></pre>
+<p>Try the above transcript again and see if the behavior is more intuitive.</p>
+</li>
+        
+          <li> <h1>Archive</h1>
+<p>This is the lab as implemented so far:</p>
+<ul>
+<li><a href="./archives/pacemaker-console-command-prototype.zip">pacemaker-console-command-prototype.zip</a></li>
+</ul>
+<h1>Exercises</h1>
+<h2>Reintroduce Commands</h2>
+<p>Create commands from the original pacemaker, including:</p>
+<ul>
+<li>add activity</li>
+<li>add location to an activity</li>
+<li>change file format</li>
+<li>load</li>
+<li>store</li>
+</ul>
+<p>The first two can be &#39;undable&#39;, perhaps not the last three..</p>
+<h2>New Commands</h2>
+<p>Introduce commands for removing activities (not present in the original).Make sure the &#39;undo&#39; works as expected for this.</p>
+</li>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('uk-label uk-text-lowercase');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertAfter($images[i]);
+      $('<br>').insertAfter($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

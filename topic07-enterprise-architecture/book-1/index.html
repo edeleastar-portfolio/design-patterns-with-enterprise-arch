@@ -1,0 +1,426 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <style>
+    
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+  </style>
+
+  <body class="lab">
+
+    
+  <div class="uk-offcanvas-content">
+    <div id="offcanvas-usage" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav">
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic01-context/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-01
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic02-template-method-strategy/book-template-method-strategy/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-02
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic03-command/book-a-command/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-03
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic03-command/book-a-prototype/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+lab-03b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic05-observer-gof-1/book-android-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-05a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic05-observer-gof-1/book-android-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-05b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-3/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-4/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-6/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06c
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic07-enterprise-architecture/book-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-07a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic07-enterprise-architecture/book-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-07b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic08-design-techniques/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-08
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic09-principles-and-styles/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-09
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic10-architecture-patterns/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-10
+                </a>
+              </li>
+            
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>Enterprise Architecture </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-07a</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">06</a></li>
+            
+              <li><a href="#">07</a></li>
+            
+              <li><a href="#">08</a></li>
+            
+              <li><a href="#">09</a></li>
+            
+              <li><a href="#">10</a></li>
+            
+              <li><a href="#">11</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
+<p>The objective of this lab is to install Archi (archimate modelling) and through it&#39;s use, bring a practical focus to some of the terms and concepts covered in the lecture.</p>
+</li>
+        
+          <li> <h1>Installing Archi (a tool for ArchiMate modelling)</h1>
+<p><img src="img/00.png" alt="Free ArchiMate Modelling Tool"></p>
+<p><img src="img/01.png" alt="ArchiMate Modelling Language - Brief Description"></p>
+<p>You can read more about ArchiMate here: <a href="http://pubs.opengroup.org/architecture/archimate2-doc/toc.html">http://pubs.opengroup.org/architecture/archimate2-doc/toc.html</a></p>
+<p>Nagivate to the ArchiMate website:</p>
+<ul>
+<li><a href="http://www.archimatetool.com/">http://www.archimatetool.com/</a></li>
+</ul>
+<p>and click the <strong>Free Download</strong> button to save the latest version to your local disk: </p>
+<p><img src="img/02.png" alt="Archi - Download"></p>
+<p>Once it is downloaded, locate the file on your hard disk and run it.</p>
+<p>Once installed, start the Archi application:</p>
+<p><img src="img/03.png" alt="Archi - Welcome Window"></p>
+<p>Close the <strong>Welcome</strong> window.  You are now ready to start modelling:</p>
+<p><img src="img/04.png" alt="Archi - Application"></p>
+</li>
+        
+          <li> <h1>Archisurance Example</h1>
+<p>Archi comes with two example Models:</p>
+<ul>
+<li>Archisurance (the focus of this lab)</li>
+<li>OpenDay</li>
+</ul>
+<p>Open the <strong>Archisurance</strong> model that is stored in the <strong>examples</strong> folder for your recently installed <strong>Archi</strong> application:</p>
+<p><img src="img/05.png" alt="Open Archisurance Example"></p>
+<p><img src="img/06.png" alt="Archisurance Model"></p>
+<p>The Model Tree for Archisurance looks like this:</p>
+<p><img src="img/07.png" alt="Archisurance Model Tree"></p>
+<p><strong><em>Note: when you create an empty model, you are provided with the highest-level folder structure. You can create sub-folders under these and this allows you to organise the elements in any way you wish.</em></strong>  </p>
+<p>The Archinsurance model contains elements that typically belong to one of three main layers at which an enterprise can be modelled:</p>
+<ul>
+<li>The Business Layer</li>
+<li>The Application Layer</li>
+<li>The Technology Layer</li>
+</ul>
+<p>In the next few steps, we will briefly look at each of these three layers and the elements within.  We will also investigate some other folders in the Model Tree.</p>
+</li>
+        
+          <li> <h1>Archinsurance Example - Business Layer</h1>
+<p><strong><em>According to opengroup.org, &quot;the Business Layer offers products and services to external customers, which are realised in the organisation by business processes performed by business actors.&quot;</em></strong></p>
+<p><img src="img/08.png" alt="Archinsurance Example - Business Layer"></p>
+<h2>Business Layer - Legend of Possible Elements</h2>
+<p><img src="img/08a.png" alt="Business Layer Elements - Coloured Yellow">
+<img src="img/08b.png" alt="Business Layer Elements - Coloured Yellow (contd.)"></p>
+<h2>Actors (user-defined sub folder)</h2>
+<p>Referring to the legend of elements above, review the Actors created in the Archinsurance model:</p>
+<p><img src="img/09a.png" alt="Archinsurance Example - Actors (subset)"></p>
+<h2>Functions (user-defined sub folder)</h2>
+<p>Referring to the legend of elements above, review the Functions created in the Archinsurance model:</p>
+<p><img src="img/09b.png" alt="Archinsurance Example - Functions"></p>
+<h2>Information (user-defined sub folder)</h2>
+<p>Referring to the legend of elements above, review the Information elements created in the Archinsurance model:</p>
+<p><img src="img/09c.png" alt="Archinsurance Example - Information elements"></p>
+<h2>Processes (user-defined sub folder)</h2>
+<p>Referring to the legend of elements above, review the Processes created in the Archinsurance model:</p>
+<p><img src="img/09d.png" alt="Archinsurance Example - Processes"></p>
+<h2>Products (user-defined sub folder)</h2>
+<p>Referring to the legend of elements above, review the Produts created in the Archinsurance model:</p>
+<p><img src="img/09e.png" alt="Archinsurance Example - Products"></p>
+<p>For more information on the Business Layer, please visit <a href="http://pubs.opengroup.org/architecture/archimate2-doc/chap03.html">http://pubs.opengroup.org/architecture/archimate2-doc/chap03.html</a></p>
+</li>
+        
+          <li> <h1>Archinsurance Example - Application Layer</h1>
+<p><strong><em>According to opengroup.org, &quot;the Application Layer supports the business layer with application services which are realised by (software) applications.&quot;</em></strong></p>
+<p><img src="img/10.png" alt="Archinsurance Example - Application Layer"></p>
+<h2>Application Layer - Legend of Possible Elements</h2>
+<p><img src="img/10a.png" alt="Application Layer Elements - Coloured Blue"></p>
+<h2>Applications and Data (user-defined sub folders)</h2>
+<p>Referring to the legend of elements above, review the elements created in the Applications and Data subfolders.</p>
+<p>For more information on the Application Layer, please visit <a href="http://pubs.opengroup.org/architecture/archimate2-doc/chap04.html">http://pubs.opengroup.org/architecture/archimate2-doc/chap04.html</a></p>
+</li>
+        
+          <li> <h1>Archinsurance Example - Technology Layer</h1>
+<p><strong><em>According to opengroup.org, &quot;the Technology Layer offers infrastructure services (e.g., processing, storage, and communication services) needed to run applications, realised by computer and communication hardware and system software.&quot;</em></strong></p>
+<p><img src="img/12.png" alt="Archinsurance Example - Technology Layer"></p>
+<h2>Technology Layer - Legend of Possible Elements</h2>
+<p><img src="img/12a.png" alt="Technology Layer Elements - Coloured Green"></p>
+<h2>Technology Folder</h2>
+<p>Referring to the legend of elements above, review the elements created in the Technology folder.</p>
+<p>For more information on the Application Layer, please visit <a href="http://pubs.opengroup.org/architecture/archimate2-doc/chap05.html">http://pubs.opengroup.org/architecture/archimate2-doc/chap05.html</a></p>
+</li>
+        
+          <li> <h1>Archinsurance Example - Motivation Extension</h1>
+<p><strong><em>According to opengroup.org, &quot;a motivational element is defined as an element that provides the context or reason lying behind the architecture of an enterprise.  The Motivation extension of ArchiMate adds the motivational concepts such as goal, principle, and requirement. It addresses the way the enterprise architecture is aligned to its context, as described by motivational elements.</em></strong></p>
+<p><img src="img/14.png" alt="Archinsurance Example - Motivation Extension"></p>
+<h2>Motivation Extension - Legend of Possible Elements</h2>
+<p><img src="img/14a.png" alt="Motivation Extension Elements - Coloured Purple"></p>
+<h2>Motivation Folder</h2>
+<p>Referring to the legend of elements above, review the elements created in the Motivation folder.</p>
+<p>For more information on Motivation, please see <a href="http://pubs.opengroup.org/architecture/archimate2-doc/chap10.html#_Toc371945252">http://pubs.opengroup.org/architecture/archimate2-doc/chap10.html#_Toc371945252</a></p>
+</li>
+        
+          <li> <h1>Archinsurance Example - Implementation &amp; Migration Extension</h1>
+<p><strong><em>According to opengroup.org, this extension adds concepts related to the implementation and migration of architectures.  This extension includes concepts for modeling implementation programs and projects to support program, portfolio, and project management, and a plateau concept to support migration planning.</em></strong></p>
+<h2>Implementation &amp; Migration Extension - Legend of Possible Elements</h2>
+<p><img src="img/16a.png" alt="Implementation &amp; Migration Extension Elements"></p>
+<h2>Implementation &amp; Migration Folder</h2>
+<p>Note that the Archinsurance example does not have any implementation on migration elements added to it.</p>
+<p>For more information on Implementation and Migration, please see <a href="http://pubs.opengroup.org/architecture/archimate2-doc/chap11.html">http://pubs.opengroup.org/architecture/archimate2-doc/chap11.html</a></p>
+</li>
+        
+          <li> <h1>Archinsurance Example - Connectors</h1>
+<p><strong><em>According to opengroup.org, a Junction is used to connect dynamic relationships of the same type. A Junction is used in a number of situations to connect dynamic (triggering or flow) relationships of the same type; for example, to indicate splits or joins.</em></strong></p>
+<h2>Connectors - Three Types of Junctions</h2>
+<p><img src="img/17.png" alt="Connectors - Three Types of Junctions"></p>
+<h2>Connectors Folder</h2>
+<p>Note that the Archinsurance example does not have any junctions added to it.</p>
+</li>
+        
+          <li> <h1>Archinsurance Example - Relations</h1>
+<p><strong><em>Contains the relationships between elements as they are created in Views (diagrams) and any user-created sub-folders.</em></strong></p>
+<h2>Classification of Relationships</h2>
+<p>Each element in the model can connect to one or more other elements via one or more relationships (connections).  These can be classified as either:</p>
+<ul>
+<li>Structural, which model the structural coherence of concepts of the same or different types.</li>
+<li>Dynamic, which are used to model (temporal) dependencies between behavioral concepts.</li>
+<li>Other, which do not fall in one of the two above categories.</li>
+</ul>
+<p><img src="img/18a.png" alt="Structural Relationships">
+<img src="img/18b.png" alt="Dynamic Relationships">
+<img src="img/18c.png" alt="Other Relationships"></p>
+<h2>Relations Folder</h2>
+<p>Referring to the legend of elements above, review the elements created in the Relations folder:</p>
+<p><img src="img/18.png" alt="Archinsurance Example - Relations Folder"></p>
+<p>For more information on relationships, please visit <a href="http://pubs.opengroup.org/architecture/archimate2-doc/chap07.html#_Toc371945208">http://pubs.opengroup.org/architecture/archimate2-doc/chap07.html#_Toc371945208</a></p>
+</li>
+        
+          <li> <h1>Archinsurance Example - Views</h1>
+<p><strong><em>We will cover this in a practical later in the course. </em></strong></p>
+</li>
+        
+          <li> <h1>Archi - some observations</h1>
+<p>Here are some useful observations from the <strong>Archi User Guide</strong> found in the <strong>Help</strong> area of Archi.</p>
+<h2>Deleting an element</h2>
+<p>If an element that you wish to delete appears in one or more Views you will be warned that it is referenced in those Views. If you then delete the element from the tree you will also delete it from any Views where it is referenced.</p>
+<h2>Adding New Elements to the View from the Palatte</h2>
+<p>If you add elements to a View from a palatte, they are automatically added to the appropriate type folder in your Model tree.</p>
+<h2>Elements in italics</h2>
+<p>If an element in the Model Tree is in italic font, this indicates that it is not used in any View.</p>
+<p><img src="img/25.png" alt="Elements in Italics"></p>
+<h2>Synchronising Selections in the Model Tree and a View</h2>
+<p>When selecting elements in the Model Tree and in diagram Views it is sometimes useful to synchronise the selection between the elements in both windows. Pressing the &quot;Link to View&quot; button in the Model Tree window allows this to happen:</p>
+<p><img src="img/26.png" alt="Link to View toggle button"></p>
+<h2>Filtering Element Types</h2>
+<p>To filter certain types of ArchiMate element you can select the different types to include in the filter/search in the drop-down menu:</p>
+<p><img src="img/27.png" alt="Filtering Element Types"></p>
+</li>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('uk-label uk-text-lowercase');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertAfter($images[i]);
+      $('<br>').insertAfter($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>
