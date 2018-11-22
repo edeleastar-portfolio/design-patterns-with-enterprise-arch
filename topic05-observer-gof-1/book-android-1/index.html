@@ -1,23 +1,27 @@
-
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+        type="text/css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css"
+        rel="stylesheet"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
   <style>
     
 
@@ -63,197 +67,155 @@ h3 {
 
 
   </style>
+</head>
 
-  <body class="lab">
+<body>
 
+
+
+<div class="ui fixed top pointing inverted stackable menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
     
-  <div class="uk-offcanvas-content">
-    <div id="offcanvas-usage" uk-offcanvas>
-      <div class="uk-offcanvas-bar">
-        <button class="uk-offcanvas-close" type="button" uk-close></button>
-        <ul class="uk-nav">
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic01-context/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-01
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic02-template-method-strategy/book-template-method-strategy/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-02
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic03-command/book-a-command/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-03
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic03-command/book-a-prototype/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-lab-03b
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic05-observer-gof-1/book-android-1/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-05a
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic05-observer-gof-1/book-android-2/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-05b
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-3/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-06a
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-4/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-06b
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-6/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-06c
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic07-enterprise-architecture/book-1/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-07a
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic07-enterprise-architecture/book-2/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-07b
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic08-design-techniques/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-08
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic09-principles-and-styles/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-09
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic10-architecture-patterns/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-10
-                </a>
-              </li>
-            
-          
-        </ul>
-      </div>
-    </div>
+      <a href="../index.html"> Observer + Pattern Catalogues  </a>
+    
+  </header>
+  <div class="right tab-menu menu">
+    
+      <a class="item" data-tab="Lab-05a">
+        Lab-05a
+      </a>
+    
+      <a class="item" data-tab="01">
+        01
+      </a>
+    
+      <a class="item" data-tab="02">
+        02
+      </a>
+    
+      <a class="item" data-tab="03">
+        03
+      </a>
+    
+      <a class="item" data-tab="04">
+        04
+      </a>
+    
+      <a class="item" data-tab="05">
+        05
+      </a>
+    
+      <a class="item" data-tab="06">
+        06
+      </a>
+    
+      <a class="item" data-tab="07">
+        07
+      </a>
+    
+      <a class="item" data-tab="08">
+        08
+      </a>
+    
+      <a class="item" data-tab="09">
+        09
+      </a>
+    
+      <a class="item" data-tab="Exercises">
+        Exercises
+      </a>
+    
   </div>
+</div>
 
-
-    <div uk-sticky>
-      <nav class="uk-navbar">
-        <div class="uk-navbar-left">
-          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
-                   uk-tooltip></a></li>
-            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
-                                     pos="bottom" uk-tooltip>Observer + Pattern Catalogues </a></li>
-          </ul>
-        </div>
-        <div class="uk-navbar-right">
-          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
-              uk-switcher="connect: .switcher-container">
-            
-              <li><a href="#">Lab-05a</a></li>
-            
-              <li><a href="#">01</a></li>
-            
-              <li><a href="#">02</a></li>
-            
-              <li><a href="#">03</a></li>
-            
-              <li><a href="#">04</a></li>
-            
-              <li><a href="#">05</a></li>
-            
-              <li><a href="#">06</a></li>
-            
-              <li><a href="#">07</a></li>
-            
-              <li><a href="#">08</a></li>
-            
-              <li><a href="#">09</a></li>
-            
-              <li><a href="#">Exercises</a></li>
-            
-          </ul>
-        </div>
-      </nav>
-    </div>
-
-    <div class="uk-container uk-container-expand">
-      <ul class="uk-switcher switcher-container">
-        
-          <li> <h1>Objectives</h1>
+<div class="ui pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    <br><br>
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic01-context/book/index.html">Lab-01 </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic02-template-method-strategy/book-template-method-strategy/index.html">Lab-02 </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic03-command/book-a-command/index.html">Lab-03 </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic03-command/book-a-prototype/index.html">lab-03b </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic05-observer-gof-1/book-android-1/index.html">Lab-05a </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic05-observer-gof-1/book-android-2/index.html">Lab-05b </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic06-gof-2-posa/book-android-3/index.html">Lab-06a </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic06-gof-2-posa/book-android-4/index.html">Lab-06b </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic06-gof-2-posa/book-android-6/index.html">Lab-06c </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic07-enterprise-architecture/book-1/index.html">Lab-07a </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic07-enterprise-architecture/book-2/index.html">Lab-07b </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic08-design-techniques/book/index.html">Lab-08 </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic09-principles-and-styles/book/index.html">Lab-09 </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic10-architecture-patterns/book/index.html">Lab-10 </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment">
+      <br>
+      
+        <div class="ui tab segment lab" data-tab="Lab-05a">
+          <h1>Objectives</h1>
 <p>Layout a new Android project with a single activity. Design this activity to permit simple sports activities to be specified. Implement the Activity class to support these controls</p>
-</li>
-        
-          <li> <h1>Create Project</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="01">
+          <h1>Create Project</h1>
 <p>Download and install the latest Android/Ecliose SDL</p>
 <p>Create a new Android application, with the following properties:</p>
 <p><img src="img/a01.png" alt=""></p>
@@ -274,9 +236,11 @@ Lab-10
 <h2>Properties</h2>
 <p><img src="img/a09.png" alt=""></p>
 <p>These views are closely related - and you will need to monitor the information displayed there continually as you evolve the appearance of your activities screens.</p>
-</li>
-        
-          <li> <h1>Layout Donation Activity</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="02">
+          <h1>Layout Donation Activity</h1>
 <p>For this lab, out objective is to reproduce in Android this feature from this web app:</p>
 <p><img src="img/x08.png" alt=""></p>
 <p>In eclipse, delete the current &#39;Hello World&#39; text, and drag and drop a new&#39;LargeText&#39; form widget onto the canvas. Look closely at the following:</p>
@@ -322,9 +286,11 @@ Lab-10
     &lt;string name=&quot;enter_activity_details&quot;&gt;Enter Activity Details&lt;/string&gt;
 &lt;/resources&gt;</code></pre>
 <p>Note the relationship between &#39;enter_activity_details&#39; in both files. </p>
-</li>
-        
-          <li> <h1>Donate Button</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="03">
+          <h1>Donate Button</h1>
 <p>Place a button directly on to the activity - attached to the bottom of the screen as shown:</p>
 <p><img src="img/a12.png" alt="Android Visual Designer"></p>
 <p>Rename both the button and the text field:</p>
@@ -430,9 +396,11 @@ public class CreateActivity extends Activity
 }</code></pre>
 <p>Finding the log message can be difficult, unless you set a filter or just a simple search for the Pacemaker string:</p>
 <p><img src="img/a15.png" alt=""></p>
-</li>
-        
-          <li> <h1>Documentation</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="04">
+          <h1>Documentation</h1>
 <p>The android documentation is particularly helpful and well designed. These are the two key starting points:</p>
 <ul>
 <li><a href="http://developer.android.com/guide/components/index.html">http://developer.android.com/guide/components/index.html</a></li>
@@ -465,9 +433,11 @@ public class CreateActivity extends Activity
 <p>Save everything and execute the app, and monitor the log as you press the button:</p>
 <p><img src="img/a17.png" alt=""></p>
 <p>We now have our first interaction working!</p>
-</li>
-        
-          <li> <h1>Research + New Control Layout</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="05">
+          <h1>Research + New Control Layout</h1>
 <p>Recall the UI we are trying to implement:</p>
 <p><img src="img/x18.png" alt=""></p>
 <p>We need a Radio Buttons, some sort of selection/combo box + a progress bar. These can be found in various locations in the pallette:</p>
@@ -621,9 +591,11 @@ public class CreateActivity extends AppCompatActivity
     Log.v(&quot;Pacemaker&quot;, &quot;CreateActivity Button Pressed!&quot;);
   }
 }</code></pre>
-</li>
-        
-          <li> <h1>NumberPicker</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="06">
+          <h1>NumberPicker</h1>
 <p>This is our reference documentation:</p>
 <ul>
 <li><a href="http://developer.android.com/reference/android/widget/NumberPicker.html">http://developer.android.com/reference/android/widget/NumberPicker.html</a></li>
@@ -658,9 +630,11 @@ public class CreateActivity extends AppCompatActivity
     Log.v(&quot;Pacemaker&quot;, &quot;CreateActivity Button Pressed with &quot; + distance);
   }</code></pre>
 <p>Run this now - and verify that it operates as expected (see the actual amounts in the log view).</p>
-</li>
-        
-          <li> <h1>List Activities</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="07">
+          <h1>List Activities</h1>
 <p>We would like to display the activities we have just created, mirroring the approach taken by the web application:</p>
 <p><img src="img/x24.png" alt=""></p>
 <p>Select the package containing the CreateActivity class, and create a new activity using the wizard (New-&gt;Android-&gt;Android Activity:</p>
@@ -670,9 +644,11 @@ public class CreateActivity extends AppCompatActivity
 <p>In the designer, place a Large Text Field + a ListView (from the Composite panel) directly on to the canvas like this:</p>
 <p><img src="img/a26.png" alt=""></p>
 <p>Note the names used for the IDs in the Outline view.</p>
-</li>
-        
-          <li> <h1>Activities Model</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="08">
+          <h1>Activities Model</h1>
 <p>Create a new class to represent an individual (user) activity - called MyActivity to avoid interference from the Android Activity namespace:</p>
 <pre><code class="lang-java">package org.pacemaker.pacemaker;
 
@@ -751,9 +727,11 @@ public class MyActivity
     activities.add(activity);
     Log.v(&quot;Pacemaker&quot;, &quot;CreateActivity Button Pressed with &quot; + distance);
   }</code></pre>
-</li>
-        
-          <li> <h1>Rendering the Activities</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="09">
+          <h1>Rendering the Activities</h1>
 <p>Place a new button on the CreateAvtivity panel to trigger the display of the activities list:</p>
 <p><img src="img/a27.png" alt=""></p>
 <p>... and install an event handler for this button:</p>
@@ -781,9 +759,11 @@ public class MyActivity
     Intent intent = new Intent(this, ActivitiesList.class);
     startActivity (intent);
   }</code></pre>
-</li>
-        
-          <li> <h1>Exercises</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="Exercises">
+          <h1>Exercises</h1>
 <p>Archive of lab so far:</p>
 <ul>
 <li><a href="https://github.com/wit-design-patterns-2016/pacemaker-android/releases/tag/V1">https://github.com/wit-design-patterns-2016/pacemaker-android/releases/tag/V1</a></li>
@@ -829,26 +809,67 @@ public class MyActivity
 </ul>
 <p>See if you can have the list of activities displayed in the ActivitiesList view. </p>
 <p>The next lab will go though both options in solving this problem.</p>
-</li>
-        
-      </ul>
-    </div>
 
-    <script>
-      $(document).ready(function() {
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+  $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
   const $images = $('.lab img');
   jQuery.each($images, function(i) {
     if ($images[i].alt.length > 0) {
-      const divImg = $(document.createElement('div')).addClass('');
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
       $($images[i]).wrap(divImg);
-      const divLabel = $(document.createElement('div')).addClass('uk-label uk-text-lowercase');
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
       divLabel.append($images[i].alt);
-      $(divLabel).insertAfter($images[i]);
-      $('<br>').insertAfter($images[i]);
+      $(divLabel).insertBefore($images[i]);
     }
   });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
 });
 
-    </script>
-  </body>
+</script>
+</body>
 </html>

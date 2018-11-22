@@ -1,23 +1,27 @@
-
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+        type="text/css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css"
+        rel="stylesheet"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
   <style>
     
 
@@ -63,189 +67,139 @@ h3 {
 
 
   </style>
+</head>
 
-  <body class="lab">
+<body>
 
+
+
+<div class="ui fixed top pointing inverted stackable menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
     
-  <div class="uk-offcanvas-content">
-    <div id="offcanvas-usage" uk-offcanvas>
-      <div class="uk-offcanvas-bar">
-        <button class="uk-offcanvas-close" type="button" uk-close></button>
-        <ul class="uk-nav">
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic01-context/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-01
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic02-template-method-strategy/book-template-method-strategy/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-02
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic03-command/book-a-command/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-03
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic03-command/book-a-prototype/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-lab-03b
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic05-observer-gof-1/book-android-1/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-05a
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic05-observer-gof-1/book-android-2/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-05b
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-3/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-06a
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-4/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-06b
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-6/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-06c
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic07-enterprise-architecture/book-1/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-07a
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic07-enterprise-architecture/book-2/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-07b
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic08-design-techniques/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-08
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic09-principles-and-styles/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-09
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic10-architecture-patterns/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-10
-                </a>
-              </li>
-            
-          
-        </ul>
-      </div>
-    </div>
+      <a href="../index.html"> Architecture Principles and Styles  </a>
+    
+  </header>
+  <div class="right tab-menu menu">
+    
+      <a class="item" data-tab="Lab-09">
+        Lab-09
+      </a>
+    
+      <a class="item" data-tab="Introduction">
+        Introduction
+      </a>
+    
+      <a class="item" data-tab="D0">
+        D0
+      </a>
+    
+      <a class="item" data-tab="D1">
+        D1
+      </a>
+    
+      <a class="item" data-tab="D2">
+        D2
+      </a>
+    
+      <a class="item" data-tab="D3">
+        D3
+      </a>
+    
+      <a class="item" data-tab="Solution">
+        Solution
+      </a>
+    
   </div>
+</div>
 
-
-    <div uk-sticky>
-      <nav class="uk-navbar">
-        <div class="uk-navbar-left">
-          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
-                   uk-tooltip></a></li>
-            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
-                                     pos="bottom" uk-tooltip>Architecture Principles and Styles </a></li>
-          </ul>
-        </div>
-        <div class="uk-navbar-right">
-          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
-              uk-switcher="connect: .switcher-container">
-            
-              <li><a href="#">Lab-09</a></li>
-            
-              <li><a href="#">Introduction</a></li>
-            
-              <li><a href="#">D0</a></li>
-            
-              <li><a href="#">D1</a></li>
-            
-              <li><a href="#">D2</a></li>
-            
-              <li><a href="#">D3</a></li>
-            
-              <li><a href="#">Solution</a></li>
-            
-          </ul>
-        </div>
-      </nav>
-    </div>
-
-    <div class="uk-container uk-container-expand">
-      <ul class="uk-switcher switcher-container">
-        
-          <li> <h1>Objectives</h1>
+<div class="ui pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    <br><br>
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic01-context/book/index.html">Lab-01 </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic02-template-method-strategy/book-template-method-strategy/index.html">Lab-02 </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic03-command/book-a-command/index.html">Lab-03 </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic03-command/book-a-prototype/index.html">lab-03b </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic05-observer-gof-1/book-android-1/index.html">Lab-05a </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic05-observer-gof-1/book-android-2/index.html">Lab-05b </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic06-gof-2-posa/book-android-3/index.html">Lab-06a </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic06-gof-2-posa/book-android-4/index.html">Lab-06b </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic06-gof-2-posa/book-android-6/index.html">Lab-06c </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic07-enterprise-architecture/book-1/index.html">Lab-07a </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic07-enterprise-architecture/book-2/index.html">Lab-07b </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic08-design-techniques/book/index.html">Lab-08 </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic09-principles-and-styles/book/index.html">Lab-09 </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-design-patterns-2016.github.io/part-1//topic10-architecture-patterns/book/index.html">Lab-10 </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment">
+      <br>
+      
+        <div class="ui tab segment lab" data-tab="Lab-09">
+          <h1>Objectives</h1>
 <p>In this Lab, we will build a few Architecture Views describing the design of a simple Analytics Dashboard for Runkeeper.com. This dashboard is the first application making use of data assets directly acquired from Healthgraph.com (operating as a separate company from Runkeeper.com).</p>
-</li>
-        
-          <li> <h1>LAB INTRODUCTION (Section D)</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="Introduction">
+          <h1>LAB INTRODUCTION (Section D)</h1>
 <p>The figure below present the outlay of the Web Desktop version of the new Runkeeper.com “Achiever Analytics Dashboard”, reserved to ELITE members only.</p>
 <p> <img src="img/00.png" alt=""></p>
 <p>The dashboard is composed of 4 main areas:</p>
@@ -272,9 +226,11 @@ Dashboard contents and graphics for other activities may slightly vary, but the 
 <p>The two most important decisions made about the Architecture we will describe in the next section are:</p>
 <p>1.<strong><em>Performance by Design</em></strong>: an asynchronous batch analytics daemon continuously runs on Runkeeper&#39;s servers to perform the most data intensive calculations and prepare De-normalized data analytics views that the Dashboard can connect to </p>
 <p>2.<strong><em>Data Source Abstraction</em></strong>:  data from multiple sources (off-premise, and on-premise) is consolidated in one location), accessed through an indirection layer reducing coupling between front-end and back-end. </p>
-</li>
-        
-          <li> <h1>STEP D0 – Creating the CONTEXT VIEW</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="D0">
+          <h1>STEP D0 – Creating the CONTEXT VIEW</h1>
 <p>The purpose of this view is to outline the main elements at play in the design of our analytics dashboard:</p>
 <ol>
 <li>Who will interact with the dashboard, performing what kind of actions </li>
@@ -305,9 +261,11 @@ Dashboard contents and graphics for other activities may slightly vary, but the 
 </ul>
 <p><img src="img/02.png" alt=""></p>
 <p>The architecture is composed of two main distinct components, running on different server processes, possibly on different servers, independently from one another.</p>
-</li>
-        
-          <li> <h1>STEP D1 – Creating the BEHAVIORAL VIEW</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="D1">
+          <h1>STEP D1 – Creating the BEHAVIORAL VIEW</h1>
 <p>The purpose of this View is to outline:</p>
 <ol>
 <li>How data gets collected and prepared for purposes building analytics data sets </li>
@@ -343,9 +301,11 @@ The result of the data preparation stores User Analytics Views into Runkeeper&#3
 </li>
 </ul>
 <p><img src="img/04.png" alt=""></p>
-</li>
-        
-          <li> <h1>STEP D2 – Creating the INFORMATION VIEW</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="D2">
+          <h1>STEP D2 – Creating the INFORMATION VIEW</h1>
 <p>The purpose of this View is to model:</p>
 <ol>
 <li>Data flow of the asynchronous Batch Analytics data preparation process </li>
@@ -377,9 +337,11 @@ The result of the data preparation stores User Analytics Views into Runkeeper&#3
 </li>
 </ul>
 <p><img src="img/06.png" alt=""></p>
-</li>
-        
-          <li> <h1>STEP D3 – Creating the FUNCTIONAL VIEW(S) of our Analytics Dashboard</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="D3">
+          <h1>STEP D3 – Creating the FUNCTIONAL VIEW(S) of our Analytics Dashboard</h1>
 <p>The purpose of this View is to outline:</p>
 <ol>
 <li>The structure of our design and grouping of key components </li>
@@ -411,33 +373,76 @@ The result of the data preparation stores User Analytics Views into Runkeeper&#3
 </li>
 </ul>
 <p><img src="img/08.png" alt=""></p>
-</li>
-        
-          <li> <h1>Solution</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="Solution">
+          <h1>Solution</h1>
 <p>This github repository contains the solution for this lab (i.e. lab 09): </p>
 <ul>
 <li><a href="https://github.com/wit-design-patterns-2016/models">https://github.com/wit-design-patterns-2016/models</a></li>
 </ul>
-</li>
-        
-      </ul>
-    </div>
 
-    <script>
-      $(document).ready(function() {
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+  $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
   const $images = $('.lab img');
   jQuery.each($images, function(i) {
     if ($images[i].alt.length > 0) {
-      const divImg = $(document.createElement('div')).addClass('');
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
       $($images[i]).wrap(divImg);
-      const divLabel = $(document.createElement('div')).addClass('uk-label uk-text-lowercase');
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
       divLabel.append($images[i].alt);
-      $(divLabel).insertAfter($images[i]);
-      $('<br>').insertAfter($images[i]);
+      $(divLabel).insertBefore($images[i]);
     }
   });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
 });
 
-    </script>
-  </body>
+</script>
+</body>
 </html>
