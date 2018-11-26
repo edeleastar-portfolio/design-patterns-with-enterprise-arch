@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
-        type="text/css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css"
-        rel="stylesheet"/>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <style>
-    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
 
 body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
@@ -66,152 +66,180 @@ h3 {
 
 
 
-  </style>
-</head>
+      
 
-<body>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
 
 
 
-<div class="ui fixed top pointing inverted stackable menu labmenu">
-  <header class="header item">
-    <i id="toc" class="sitemap icon"></i>
-    
-      <a href="../index.html"> Patterns Thinking  </a>
-    
-  </header>
-  <div class="right tab-menu menu">
-    
-      <a class="item" data-tab="Lab-06b">
-        Lab-06b
-      </a>
-    
-      <a class="item" data-tab="01">
-        01
-      </a>
-    
-      <a class="item" data-tab="02">
-        02
-      </a>
-    
-      <a class="item" data-tab="03">
-        03
-      </a>
-    
-      <a class="item" data-tab="04">
-        04
-      </a>
-    
-      <a class="item" data-tab="05">
-        05
-      </a>
-    
-      <a class="item" data-tab="06">
-        06
-      </a>
-    
-      <a class="item" data-tab="07">
-        07
-      </a>
-    
-      <a class="item" data-tab="08">
-        08
-      </a>
-    
-      <a class="item" data-tab="Exercises">
-        Exercises
-      </a>
-    
+    </style>
+  </head>
+
+  <body class="uk-background-muted">
+    <div class="wrapper">
+      <div class="content">
+        <div style="height:1000px;">
+          
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html"> Patterns Thinking  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="Lab-06b">
+          Lab-06b
+        </a>
+      
+        <a class="item" data-tab="01">
+          01
+        </a>
+      
+        <a class="item" data-tab="02">
+          02
+        </a>
+      
+        <a class="item" data-tab="03">
+          03
+        </a>
+      
+        <a class="item" data-tab="04">
+          04
+        </a>
+      
+        <a class="item" data-tab="05">
+          05
+        </a>
+      
+        <a class="item" data-tab="06">
+          06
+        </a>
+      
+        <a class="item" data-tab="07">
+          07
+        </a>
+      
+        <a class="item" data-tab="08">
+          08
+        </a>
+      
+        <a class="item" data-tab="Exercises">
+          Exercises
+        </a>
+      
+    </div>
   </div>
-</div>
 
-<div class="ui pushable">
-  <div class="ui inverted labeled icon left inline vertical sidebar menu">
-    <br><br>
-    
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
       
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic01-context/book/index.html">Lab-01 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic01-context/book/index.html">Lab-01 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic02-template-method-strategy/book-template-method-strategy/index.html">Lab-02 </a>
+        
       
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic02-template-method-strategy/book-template-method-strategy/index.html">Lab-02 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic03-command/book-a-command/index.html">Lab-03 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic03-command/book-a-prototype/index.html">lab-03b </a>
+        
       
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic03-command/book-a-command/index.html">Lab-03 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic05-observer-gof-1/book-android-1/index.html">Lab-05a </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic05-observer-gof-1/book-android-2/index.html">Lab-05b </a>
+        
       
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic03-command/book-a-prototype/index.html">lab-03b </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-3/index.html">Lab-06a </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-4/index.html">Lab-06b </a>
+        
       
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic05-observer-gof-1/book-android-1/index.html">Lab-05a </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-6/index.html">Lab-06c </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic07-enterprise-architecture/book-1/index.html">Lab-07a </a>
+        
       
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic05-observer-gof-1/book-android-2/index.html">Lab-05b </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic07-enterprise-architecture/book-2/index.html">Lab-07b </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic08-design-techniques/book/index.html">Lab-08 </a>
+        
       
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic06-gof-2-posa/book-android-3/index.html">Lab-06a </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic09-principles-and-styles/book/index.html">Lab-09 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic10-architecture-patterns/book/index.html">Lab-10 </a>
+        
       
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic06-gof-2-posa/book-android-4/index.html">Lab-06b </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic06-gof-2-posa/book-android-6/index.html">Lab-06c </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic07-enterprise-architecture/book-1/index.html">Lab-07a </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic07-enterprise-architecture/book-2/index.html">Lab-07b </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic08-design-techniques/book/index.html">Lab-08 </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic09-principles-and-styles/book/index.html">Lab-09 </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic10-architecture-patterns/book/index.html">Lab-10 </a>
-      
-    
-  </div>
-  <div class="pusher" tabindex="-1">
-    <div class="ui basic segment">
-      <br>
-      
-        <div class="ui tab segment lab" data-tab="Lab-06b">
-          <h1>Objectives</h1>
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="Lab-06b">
+            <h1>Objectives</h1>
 <p>Retrieve a list of users from a remote REST service. Implement this using the using the Half Sync/Half Async Pattern.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="01">
-          <h1>Setup</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="01">
+            <h1>Setup</h1>
 <h2>Android Pacemaker Client</h2>
 <p>This is v4 of the pacemaker-android project from the last android lab:</p>
 <ul>
@@ -246,10 +274,10 @@ h3 {
 <li><a href="http://localhost:9000">http://localhost:9000</a></li>
 </ul>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="02">
-          <h1>Pacemaker-service</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="02">
+            <h1>Pacemaker-service</h1>
 <p>You can register a new user, log in and upload an activity.</p>
 <ul>
 <li><a href="http://localhost:9000">http://localhost:9000</a></li>
@@ -270,10 +298,10 @@ h3 {
 <img src="img/12.png" alt="">
 <img src="img/13.png" alt=""></p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="03">
-          <h1>Separated Activities by User</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="03">
+            <h1>Separated Activities by User</h1>
 <p>Back in the Android project..</p>
 <p>Currently a single list of activities is maintained, regardless of which user is logged on. We can easily refactor this by altering the data structure as follows:</p>
 <h2>PacemakerApp</h2>
@@ -303,10 +331,10 @@ h3 {
     return usersActivities;
   }</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="04">
-          <h1>JSON &amp; HTTP Libraries</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="04">
+            <h1>JSON &amp; HTTP Libraries</h1>
 <p>The pacemaker-service project is using the following libraries in its REST implementation:</p>
 <ul>
 <li><a href="https://hc.apache.org">https://hc.apache.org</a></li>
@@ -328,10 +356,10 @@ dependencies {
 }</code></pre>
 <p>The http library is largely superseded now, but we can use the same one we used on the pacemaker-service to keep our projects aligned for the moment.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="05">
-          <h1>pacemaker-android HTTP package</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="05">
+            <h1>pacemaker-android HTTP package</h1>
 <p>We need new package of classes in the android application to converse with the pacemaker-service app:</p>
 <p>Create a new package called &#39;org.pacemaker.http&#39;, and incorporate these classes:</p>
 <h2>Request</h2>
@@ -499,10 +527,10 @@ public class Rest
   }
 }</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="06">
-          <h1>Json Parser Classes</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="06">
+            <h1>Json Parser Classes</h1>
 <p>Both pacemaker-service and pacemaker-android can use the same serializers. </p>
 <p>Place this class in the models package in the android project:</p>
 <h2>JsonParser</h2>
@@ -560,10 +588,10 @@ public class JsonParser
 <pre><code>  public String kind;</code></pre>
 <p>(type is has a specific meaning in another context)</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="07">
-          <h1>PacemakerAPI Client</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="07">
+            <h1>PacemakerAPI Client</h1>
 <p>Create a new class in the &#39;org.pacemaker.main&#39; package to encapsulate API access:</p>
 <h2>PacemkerAPI</h2>
 <pre><code class="lang-java">package org.pacemaker.main;
@@ -620,10 +648,10 @@ class CreateUser extends Request
   }
 }</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="08">
-          <h1>Connect</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="08">
+            <h1>Connect</h1>
 <p>In order to use network access from android, you will need to specifically enable it in the android manifest:</p>
 <h2>AndroidManifest.xml</h2>
 <pre><code>    &lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;</code></pre>
@@ -673,10 +701,10 @@ class CreateUser extends Request
 <p>You should be able to test this now. If the service is running, then the android app will contact the service and download a list of the registered users, so you should be able to log in with one of the pre-defined users.</p>
 <p>If it is not working, you should see an error toast in the android app.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Exercises">
-          <h1>Archive</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Exercises">
+            <h1>Archive</h1>
 <p>Archive of the apps so far:</p>
 <h2>Android:</h2>
 <ul>
@@ -687,14 +715,16 @@ class CreateUser extends Request
 <li><a href="https://github.com/wit-design-patterns-2016/pacemaker-service/releases/tag/V2">https://github.com/wit-design-patterns-2016/pacemaker-service/releases/tag/V2</a></li>
 </ul>
 
-        </div>
-      
+          </div>
+        
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  $(document).on('keydown', function(e) {
+
+
+  <script>
+    $(document).on('keydown', function(e) {
   e = e || window.event;
   var nextTab;
   switch (e.which || e.keyCode) {
@@ -714,7 +744,7 @@ class CreateUser extends Request
   }
 });
 
-  $(document).ready(function() {
+    $(document).ready(function() {
   $('img').addClass('ui image');
 
   $('.ui.embed').embed();
@@ -747,6 +777,16 @@ class CreateUser extends Request
     .sidebar('attach events', '#toc');
 });
 
-</script>
-</body>
+  </script>
+
+
+        </div>
+      </div>
+      <div class="footer"> <p> Powered by <a
+          href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a>
+        Unless otherwise stated, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. </p>
+      </div>
+    </div>
+  </body>
+
 </html>

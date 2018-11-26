@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
-        type="text/css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css"
-        rel="stylesheet"/>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <style>
-    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
 
 body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
@@ -66,140 +66,168 @@ h3 {
 
 
 
-  </style>
-</head>
+      
 
-<body>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
 
 
 
-<div class="ui fixed top pointing inverted stackable menu labmenu">
-  <header class="header item">
-    <i id="toc" class="sitemap icon"></i>
-    
-      <a href="../index.html"> Design Pattens Context  </a>
-    
-  </header>
-  <div class="right tab-menu menu">
-    
-      <a class="item" data-tab="Lab-01">
-        Lab-01
-      </a>
-    
-      <a class="item" data-tab="01">
-        01
-      </a>
-    
-      <a class="item" data-tab="02">
-        02
-      </a>
-    
-      <a class="item" data-tab="03">
-        03
-      </a>
-    
-      <a class="item" data-tab="04">
-        04
-      </a>
-    
-      <a class="item" data-tab="05">
-        05
-      </a>
-    
-      <a class="item" data-tab="Exercises">
-        Exercises
-      </a>
-    
+    </style>
+  </head>
+
+  <body class="uk-background-muted">
+    <div class="wrapper">
+      <div class="content">
+        <div style="height:1000px;">
+          
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html"> Design Pattens Context  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="Lab-01">
+          Lab-01
+        </a>
+      
+        <a class="item" data-tab="01">
+          01
+        </a>
+      
+        <a class="item" data-tab="02">
+          02
+        </a>
+      
+        <a class="item" data-tab="03">
+          03
+        </a>
+      
+        <a class="item" data-tab="04">
+          04
+        </a>
+      
+        <a class="item" data-tab="05">
+          05
+        </a>
+      
+        <a class="item" data-tab="Exercises">
+          Exercises
+        </a>
+      
+    </div>
   </div>
-</div>
 
-<div class="ui pushable">
-  <div class="ui inverted labeled icon left inline vertical sidebar menu">
-    <br><br>
-    
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
       
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic01-context/book/index.html">Lab-01 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic01-context/book/index.html">Lab-01 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic02-template-method-strategy/book-template-method-strategy/index.html">Lab-02 </a>
+        
       
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic02-template-method-strategy/book-template-method-strategy/index.html">Lab-02 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic03-command/book-a-command/index.html">Lab-03 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic03-command/book-a-prototype/index.html">lab-03b </a>
+        
       
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic03-command/book-a-command/index.html">Lab-03 </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic05-observer-gof-1/book-android-1/index.html">Lab-05a </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic05-observer-gof-1/book-android-2/index.html">Lab-05b </a>
+        
       
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic03-command/book-a-prototype/index.html">lab-03b </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-3/index.html">Lab-06a </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-4/index.html">Lab-06b </a>
+        
       
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic05-observer-gof-1/book-android-1/index.html">Lab-05a </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic06-gof-2-posa/book-android-6/index.html">Lab-06c </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic07-enterprise-architecture/book-1/index.html">Lab-07a </a>
+        
       
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic05-observer-gof-1/book-android-2/index.html">Lab-05b </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic07-enterprise-architecture/book-2/index.html">Lab-07b </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic08-design-techniques/book/index.html">Lab-08 </a>
+        
       
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic06-gof-2-posa/book-android-3/index.html">Lab-06a </a>
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic09-principles-and-styles/book/index.html">Lab-09 </a>
+        
       
-    
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/design-patterns-with-enterprise-arch//topic10-architecture-patterns/book/index.html">Lab-10 </a>
+        
       
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic06-gof-2-posa/book-android-4/index.html">Lab-06b </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic06-gof-2-posa/book-android-6/index.html">Lab-06c </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic07-enterprise-architecture/book-1/index.html">Lab-07a </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic07-enterprise-architecture/book-2/index.html">Lab-07b </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic08-design-techniques/book/index.html">Lab-08 </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic09-principles-and-styles/book/index.html">Lab-09 </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-design-patterns-2016.github.io/part-1//topic10-architecture-patterns/book/index.html">Lab-10 </a>
-      
-    
-  </div>
-  <div class="pusher" tabindex="-1">
-    <div class="ui basic segment">
-      <br>
-      
-        <div class="ui tab segment lab" data-tab="Lab-01">
-          <h1>Objectives</h1>
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="Lab-01">
+            <h1>Objectives</h1>
 <p>Prepare an suitable version of Eclipse for the forthcoming labs. Download and become familiar with the pacemaker-console project. Explore the Strategy pattern in this context.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="01">
-          <h1>Tools</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="01">
+            <h1>Tools</h1>
 <p>Download and install the following:</p>
 <h2>Xtend:</h2>
 <p>Download the latest <code>Eclipse for DSL Developers</code></p>
@@ -223,10 +251,10 @@ h3 {
 </ul>
 <p>Download an install the latest Android Studio 2 build.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="02">
-          <h1>Pacemaker</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="02">
+            <h1>Pacemaker</h1>
 <p>Download and import this project into your eclipse workspace:</p>
 <ul>
 <li><a href="./archives/pacemaker-console-lab01.zip">pacemaker-console-lab01.zip</a></li>
@@ -283,10 +311,10 @@ al 3 23.3 32.6</code></pre>
 <pre><code>load</code></pre>
 <p>it should restore the entries. Experiment with this now until you are happy it functions as expected.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="03">
-          <h1>XMLSerializer</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="03">
+            <h1>XMLSerializer</h1>
 <p>The serialization has been centralised into this class:</p>
 <pre><code>public class XMLSerializer
 {
@@ -383,10 +411,10 @@ al 3 23.3 32.6</code></pre>
   }</code></pre>
 <p>Make sure you understand the above mechanisms. Perhaps debug into the running program and inspect the program state as you go.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="04">
-          <h1>Change File Format Command</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="04">
+            <h1>Change File Format Command</h1>
 <p>We would like to support a new command - <code>cff</code> - short for change file format. This command is to permit xml or json serialisation format.</p>
 <p>To save in xml format:</p>
 <pre><code>cff xml
@@ -488,10 +516,10 @@ public class JSONSerializer
 <p>Incorporate this class + the above command into your project.</p>
 <p>It will have errors (see next step)</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="05">
-          <h1>Strategy</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="05">
+            <h1>Strategy</h1>
 <p>See if you can complete the implementation such that the <code>cff</code> command works as expected.</p>
 <p>This will require:</p>
 <ul>
@@ -502,10 +530,10 @@ public class JSONSerializer
 <p>The overall effect should be to keep knowledge of the specific serializer away from the PacemanerAPI class.</p>
 <p>The solution is presented in the next step.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Exercises">
-          <h1>Exercises</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Exercises">
+            <h1>Exercises</h1>
 <h2>Solution:</h2>
 <p>This is a solution:</p>
 <ul>
@@ -541,14 +569,16 @@ public class JSONSerializer
 <p>Try this out and explore the generated output.</p>
 <p>Is it possible to seamlessly integrate this into pacemaker as another serializer?</p>
 
-        </div>
-      
+          </div>
+        
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  $(document).on('keydown', function(e) {
+
+
+  <script>
+    $(document).on('keydown', function(e) {
   e = e || window.event;
   var nextTab;
   switch (e.which || e.keyCode) {
@@ -568,7 +598,7 @@ public class JSONSerializer
   }
 });
 
-  $(document).ready(function() {
+    $(document).ready(function() {
   $('img').addClass('ui image');
 
   $('.ui.embed').embed();
@@ -601,6 +631,16 @@ public class JSONSerializer
     .sidebar('attach events', '#toc');
 });
 
-</script>
-</body>
+  </script>
+
+
+        </div>
+      </div>
+      <div class="footer"> <p> Powered by <a
+          href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a>
+        Unless otherwise stated, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. </p>
+      </div>
+    </div>
+  </body>
+
 </html>
